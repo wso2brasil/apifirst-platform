@@ -8,23 +8,23 @@ Petclinic é uma aplicação Spring Boot [Spring Boot](https://spring.io/guides/
 
 docker run -p 3306:3306 --name mysql-petclinic wso2brasil/apifirst-platform:mysql
 
+Caso já tenha criado o container, basta executar 
+
+```
+docker start mysql-petclinic
+```
+
 ### Agora basta gerar o .jar e executar a aplicação
 
 ```
 git clone https://github.com/wso2brasil/apifirst-platform.git
 cd spring-petclinic
 ./mvnw package
-java -jar target/*.jar
+java -jar -Dspring.profiles.active=mysql target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
 ```
 
 Acesse a aplicação por esse link: http://localhost:8080/
 
-Também é possível rodar utilizando o plugin do spring boot para maven:
+Esse projeto é baseado numa iniciativa muito bacana. Abaixo o link para os projetos originais:
 
-```
-./mvnw spring-boot:run
-```
-
-## Esse projeto é baseado numa iniciativa muito bacana. Abaixo o link para os projetos originais:
-
-[spring-petclinic]: https://github.com/spring-projects
+Spring Petclinic [spring-petclinic]: https://github.com/spring-projects
